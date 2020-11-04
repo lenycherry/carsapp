@@ -1,15 +1,16 @@
 import React, { Component, Fragment } from 'react';
 import Car from './Cars'
 
+
 class Mycars extends Component {
 
     state = {
         voitures: [
-            { name: 'ford', color: 'red', year: '2000' },
-            { name: 'mercedes', color: 'black', year: '2010' },
-            { name: 'peugeot', color: 'green', year: '2018' },
+            { name: 'ford', color: 'rouge', year: '2000' },
+            { name: 'mercedes', color: 'noir', year: '2010' },
+            { name: 'peugeot', color: 'vert', year: '2018' },
         ],
-        titre: 'Mon catalogue voitures.'
+        titre: 'Catalogue de voitures'
     }
     addTenYears = () => {
         const updatedState = this.state.voitures.map((param) => {
