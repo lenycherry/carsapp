@@ -26,17 +26,19 @@ class Mycars extends Component {
 
         return (
             <>
-                <h1>{this.state.titre}</h1>
+                <h1 className='text-primary title'>{this.state.titre}</h1>
 
-                <button onClick={this.addTenYears}>+ 10 ans</button>
+                <button className='btn btn-success' onClick={this.addTenYears}>+ 10 ans</button>
 
-                <table className='carsTable'>
-                    <tr>
-                        <th>Marque</th>
-                        <th>Age</th>
-                        <th>Couleur</th>
-                    </tr>
-
+                <table className="table table-hover">
+                    <thead className="bg-primary text-white">
+                        <tr>
+                            <th scope='col'>Marque</th>
+                            <th scope='col'>Age</th>
+                            <th scope='col'>Couleur</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                     {
                         this.state.voitures.map((voiture, index) => {
                             return (
@@ -46,6 +48,7 @@ class Mycars extends Component {
                             )
                         })
                     }
+                    </tbody>
                 </table>
             </>
         )

@@ -13,30 +13,24 @@ code {
 }
 
 .styled {
-color: red;
-text-transform: uppercase;
+  color: red;
+  text-transform: uppercase;
 }
 
-.carsTable{
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 60%;
+.table{
+  margin: 20px auto 5px;
+  border-bottom: 2px solid rgb(212, 209, 209);
+}
+.title{
   margin: 20px auto;
 }
-
-.carsTable td, .carsTable th {
-  border: 1px solid white;
-  padding: 8px;
-  width: 33%;
-  text-align: center;
+form{
+  text-align: initial;
 }
-
-.carsTable tr:hover {background-color: white;}
-
-.carsTable th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  background-color: rgb(24, 99, 160);
-  color: white;
+tr:nth-child(even){
+  background-color: rgb(201, 221, 247);
+}
+tr{
+  text-align: start;
 }
 

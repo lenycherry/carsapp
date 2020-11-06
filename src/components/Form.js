@@ -33,18 +33,22 @@ class Form extends Component {
     render() {
         return (
             <div>
-                <CarPicture color={this.state.color} height='400' />
+               
+                <CarPicture color={this.state.color}/>
+           
+
                 <h2>Commentaires</h2>
 
-                <form onSubmit={this.handleSubmitForm}>
-                    <div>
-                        <label>Pseudo</label>
-                        <input type='text' value={this.state.username} onChange={this.handlePseudo}></input>
+                <form className="container" onSubmit={this.handleSubmitForm}>
+
+                    <div className='form-group'>
+                        <label htmlFor="InputPseudo">Pseudo</label>
+                        <input type='text' className="form-control" id="InputPseudo" value={this.state.username} onChange={this.handlePseudo}></input>
                     </div>
 
-                    <div>
-                        <label>Couleur</label>
-                        <select value={this.state.color} onChange={this.handleColor}>
+                    <div className='form-group'>
+                        <label htmlFor="chooseColor">Couleur</label>
+                        <select  className="form-control" id="chooseColor" value={this.state.color} onChange={this.handleColor}>
                             {
                                 this.state.colors.map((color, index) => {
                                     return <option key={index} value={color}>{color}</option>
@@ -52,13 +56,14 @@ class Form extends Component {
                             }
                         </select>
 
-                        <div>
-                            <label>Commentaire</label>
-                            <textarea value={this.state.comment} onChange={this.handleComment}></textarea>
+                        <div className='form-group'>
+                            <label htmlFor="inputText">Commentaire</label>
+                            <textarea  className="form-control" id='inputText' rows='10' value={this.state.comment} onChange={this.handleComment}></textarea>
                         </div>
                     </div>
 
-                    <button>Valider</button>
+                    <button className='btn btn-primary'>Valider</button>
+
                 </form>
             </div>
         )

@@ -6,11 +6,13 @@ const Car = ({ nom, color, year }) => {
 
     if (nom) {
         return (
+            
             <tr>
                 <td>Marque: {nom}</td>
                 <td>Age: {year}</td>
                 <td>{ colorInfo}</td>
             </tr>
+        
         )
     } else {
         return null;
