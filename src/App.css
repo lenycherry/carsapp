@@ -1,6 +1,8 @@
 .App {
-  text-align: center;
-  padding: 5%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 10px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

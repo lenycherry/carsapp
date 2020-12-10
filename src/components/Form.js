@@ -4,26 +4,29 @@ import CarPicture from './CarPicture';
 class Form extends Component {
 
     state = {
-        username: '',
+
         color: '',
         colors: ['', 'red', 'blue', 'green', 'black', 'pink'],
-        comment: ""
+        age: '',
+        ages: ['', 'Un an et +', '10 ans et +', '20 ans et +', '30 ans et +'],
+        marque: '',
+        marques: ['', 'Ford', 'Mercedes', 'Peugeot', 'Honda']
 
     }
 
-    handlePseudo = e => {
-        this.setState({
-            username: e.target.value
-        })
-    }
     handleColor = event => {
         this.setState({
             color: event.target.value
         })
     }
-    handleComment = e => {
+    handleAge = event => {
         this.setState({
-            comment: e.target.value
+            age: event.target.value
+        })
+    }
+    handleMarque = event => {
+        this.setState({
+            marque: event.target.value
         })
     }
     handleSubmitForm = e => {
@@ -31,36 +34,52 @@ class Form extends Component {
     }
 
     render() {
+        //var formValues = [this.state.marque, this.state.color, this.state.age]
+        //var [marqueValue, colorValue, agevalue] = formValues
+        //console.log(marqueValue);
         return (
-            <div>
-               
-                <CarPicture color={this.state.color}/>
-           
+            <div className="container form-container w-50">
 
-                <h2>Commentaires</h2>
+                <div className="container-fluid title-car-container">
+                    <CarPicture color={this.state.color} />
+                    <h2>Chercher un véhicule</h2>
+                </div>
 
                 <form className="container" onSubmit={this.handleSubmitForm}>
 
                     <div className='form-group'>
-                        <label htmlFor="InputPseudo">Pseudo</label>
-                        <input type='text' className="form-control" id="InputPseudo" value={this.state.username} onChange={this.handlePseudo}></input>
+                        <label htmlFor="chooseBrand">Marque</label>
+                        <select className="form-control" id="chooseBrand" value={this.state.marque} onChange={this.handleMarque}>
+                            {
+                                this.state.marques.map((marque, index) => {
+                                    return <option key={index} value={marque}>{marque}</option>
+                                })
+                            }
+                        </select>
                     </div>
 
                     <div className='form-group'>
                         <label htmlFor="chooseColor">Couleur</label>
-                        <select  className="form-control" id="chooseColor" value={this.state.color} onChange={this.handleColor}>
+                        <select className="form-control" id="chooseColor" value={this.state.color} onChange={this.handleColor}>
                             {
                                 this.state.colors.map((color, index) => {
                                     return <option key={index} value={color}>{color}</option>
                                 })
                             }
                         </select>
-
-                        <div className='form-group'>
-                            <label htmlFor="inputText">Commentaire</label>
-                            <textarea  className="form-control" id='inputText' rows='10' value={this.state.comment} onChange={this.handleComment}></textarea>
-                        </div>
                     </div>
+
+                    <div className='form-group'>
+                        <label htmlFor="chooseAge">Age</label>
+                        <select className="form-control" id="chooseAge" value={this.state.age} onChange={this.handleAge}>
+                            {
+                                this.state.ages.map((age, index) => {
+                                    return <option key={index} value={age}>{age}</option>
+                                })
+                            }
+                        </select>
+                    </div>
+
 
                     <button className='btn btn-primary'>Valider</button>
 

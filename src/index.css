@@ -23,6 +23,8 @@ code {
 }
 .title{
   margin: 20px auto;
+  width: 100%;
+  text-align: center;
 }
 form{
   text-align: initial;
@@ -32,5 +34,10 @@ tr:nth-child(even){
 }
 tr{
   text-align: start;
+}
+
+.title-car-container{
+  display: flex;
+  align-items: center;
 }
 
